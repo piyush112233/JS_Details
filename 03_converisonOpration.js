@@ -1,14 +1,14 @@
 let score = 9856;
 
 let scoreString = "22151abc"
-console.log("Score: " + typeof score); // Score: 9856
+// console.log("Score: " + typeof score); // Score: 9856
 
 scoreString = Number(scoreString) // 22151
 
 /**
  * Ager string ko number me convert kar rehe hai or string mai alpha numeric value hai to Data type number to aa jayega lekin value number me convert nahi ho payegi or NAN value milega or NAN ka type number hota hai 
  */
-console.log("scoreString", scoreString) // scoreString NAN
+// console.log("scoreString", scoreString) // scoreString NAN
 
 // console.log("scoreString: " + typeof scoreString); // Score: 22151
 
@@ -47,8 +47,8 @@ let stringToNumber = Number(stringValue) // 1234
 // now i will check can i connvert other datatype to boolean
 let numberValue = "Piyush";
 let numberToBoolean = Boolean(numberValue) // true
-console.log("numberToBoolean check: " + typeof numberToBoolean); // numberToBoolean check: boolean
-console.log("numberToBoolean: ", numberToBoolean); // numberToBoolean: boolean
+// console.log("numberToBoolean check: " + typeof numberToBoolean); // numberToBoolean check: boolean
+// console.log("numberToBoolean: ", numberToBoolean); // numberToBoolean: boolean
 
 /** So  short notes is :-
  *  conversuion of sting to number => number
@@ -63,3 +63,46 @@ console.log("numberToBoolean: ", numberToBoolean); // numberToBoolean: boolean
  * conversion of undefined to boolean => false
  * conversion of NaN to boolean => false
  */
+
+
+/************************************************************* OPRATIONS  ***********************************************************************************/
+
+// 1. Arithmetic Operations
+let value = 10;
+let negativeValue = -value; // -10
+
+// console.log(negativeValue); // 10
+
+// console.log(negativeValue + negativeValue)
+// console.log(negativeValue - negativeValue)
+// console.log(negativeValue * negativeValue)
+// console.log(negativeValue / negativeValue)
+// console.log(negativeValue % negativeValue)
+// console.log(negativeValue ** negativeValue) // 100
+// console.log(negativeValue ** 2) // 100
+// console.log(negativeValue ** 3) // -1000
+// console.log(negativeValue ** 4) // 10000
+
+let str1 = "Hello"
+let str2 = " Piyush"
+
+let str3 = str1 + str2
+// console.log(str3); // Hello Piyush    By this way we can concatenate two strings
+
+// console.log("1" + 2) // or console,log(1+"2") // 12 both are same and returns 12 becasue 1 is string and 2 is number so it will convert number to string and concatenate 
+
+// console.log("1" + 2 + 2) // it will return 132 but the same thing had done but preffrance is diffrance then recived 32 first 1 is string and 2 is number so it will convert number to string and concatenate then 2 is also string so it will concatenate with 32
+
+// console.log(1 + 2 + "2")
+
+let opration = true + ""
+// console.log(true + "");
+// console.log(typeof opration)
+
+// prifix and postfix increment and decrement
+
+let a = 10;
+// console.log(a++); // 10
+a++
+console.log(a); // 11
+console.log(++a)
