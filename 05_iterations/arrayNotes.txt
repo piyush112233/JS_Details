@@ -1,0 +1,117 @@
+| 🔁 Loop/Method       | किस पर काम करता है          | नया डेटा लौटाता है?         | मौजूदा डेटा बदलता है?                | Notes (कैसे और कब इस्तेमाल करें)   |
+| -------------------- | ------------------------ | -----------------------| -------------------------------- | ----------------------------------|
+| `for`                | Array / Numbers          | ❌ नहीं                  | ✅ हाँ (अगर अंदर से बदले तो)           | Index चाहिए हो तो best है             |
+| `while`              | Condition-based          | ❌ नहीं                  | ✅ हाँ (अगर अंदर से बदले तो)           | जब कंडीशन पर आधारित हो               |
+| `for...of`           | Iterable (Array, String) | ❌ नहीं                  | ✅ हाँ (अगर manually करें तो)         | सिर्फ values पर चलता है               |
+| `for...in`           | Object                   | ❌ नहीं                  | ✅ हाँ (अगर अंदर से बदले तो)           | Keys के लिए useful है                |
+| `forEach()`          | Array                    | ❌ नहीं                  | ✅ हाँ (modification कर सकते हैं)     | Break नहीं कर सकते                   |
+| `map()`              | Array                    | ✅ हाँ (नया array)       | ❌ नहीं                             | नया array बनाना हो तो best            |
+| `filter()`           | Array                    | ✅ हाँ (नया array)       | ❌ नहीं                             | Conditions से filtering            |
+| `reduce()`           | Array                    | ✅ हाँ (एक single value) | ❌ नहीं                            | Array को single value में बदलता है     |
+| `find()`             | Array                    | ✅ हाँ (first match)     | ❌ नहीं                            | पहला matching item चाहिए             |
+| `some()` / `every()` | Array                    | ✅ हाँ (true/false)      | ❌ नहीं                            | Check करता है condition              |
+
+
+
+📘 JavaScript Loops & Methods – पूरा Notes (हिंदी में)
+
+🔁 1. for loop
+📌 इस्तेमाल: जब index चाहिए हो या manually control रखना हो
+📌 Return: ❌ कुछ return नहीं करता
+📌 Structure:
+for (let i = 0; i < array.length; i++) {
+  // काम
+}
+
+🔁 2. while loop
+📌 इस्तेमाल: जब पता न हो कितनी बार चलाना है
+📌 Return: ❌ कुछ return नहीं करता
+📌 Structure:
+while (condition) {
+  // काम
+}
+
+🔁 3. do...while loop
+📌 इस्तेमाल: जब कम से कम एक बार चलाना हो
+📌 Return: ❌ कुछ return नहीं करता
+📌 Structure:
+do {
+  // काम
+} while (condition);
+
+🔁 4. for...of loop
+📌 इस्तेमाल: Iterable चीज़ों (जैसे Array, String) के values पर
+📌 Return: ❌ कुछ return नहीं करता
+📌 Structure:
+for (let value of array) {
+  // value पर काम
+}
+
+🔁 5. for...in loop
+📌 इस्तेमाल: Objects के keys पर
+📌 Return: ❌ कुछ return नहीं करता
+📌 Structure:
+for (let key in object) {
+  console.log(object[key]);
+}
+
+🔁 6. forEach() method
+📌 इस्तेमाल: सिर्फ Arrays पर
+📌 Return: ❌ कुछ return नहीं करता
+📌 Structure:
+array.forEach((value, index) => {
+  // value/index पर काम
+});
+
+🔁 7. map() method
+📌 इस्तेमाल: जब हर element पर कुछ बदलाव करके नया array चाहिए
+📌 Return: ✅ नया array
+📌 Structure:
+let result = array.map((value, index) => {
+  return value * 2;
+});
+
+🔁 8. filter() method
+📌 इस्तेमाल: कुछ condition वाला filtered array चाहिए
+📌 Return: ✅ नया array
+📌 Structure:
+let filtered = array.filter((value) => value > 2);
+
+🔁 9. reduce() method
+📌 इस्तेमाल: पूरा array एक single value में बदलना हो
+📌 Return: ✅ single value (number, string, object etc.)
+📌 Structure:
+let total = array.reduce((acc, value) => acc + value, 0);
+
+🔁 10. find() method
+📌 इस्तेमाल: पहला matching element चाहिए
+📌 Return: ✅ पहला match या undefined
+📌 Structure:
+let result = array.find((val) => val > 3);
+
+🔁 11. some() / every() method
+📌 इस्तेमाल:
+- some: कम से कम एक element condition pass करे
+- every: सारे elements condition pass करें
+📌 Return: ✅ true या false
+📌 Structure:
+let hasValue = array.some(val => val > 5);
+let allGood = array.every(val => val < 10);
+
+🧠 Quick Summary Table:
+
+| Method/Loop    | Array पर | Object पर | Return करता है? | नया डेटा देता है? | Syntax Simple? | Remarks |
+|----------------|-----------|------------|------------------|-------------------|----------------|---------|
+| for            | ✅        | ❌         | ❌               | ❌                | 👍              | Index control |
+| while          | ✅        | ❌         | ❌               | ❌                | 👍              | Condition-based |
+| do...while     | ✅        | ❌         | ❌               | ❌                | 👍              | Runs at least once |
+| for...of       | ✅        | ❌         | ❌               | ❌                | 👍              | For values |
+| for...in       | ❌        | ✅         | ❌               | ❌                | 👍              | For keys |
+| forEach()      | ✅        | ❌         | ❌               | ❌                | 👍              | Simple, can't break |
+| map()          | ✅        | ❌         | ✅               | ✅                | 👍              | Return new array |
+| filter()       | ✅        | ❌         | ✅               | ✅                | 👍              | Useful for conditions |
+| reduce()       | ✅        | ❌         | ✅               | ✅                | Medium          | Reduces to one |
+| find()         | ✅        | ❌         | ✅               | ✅                | 👍              | First match |
+| some()         | ✅        | ❌         | ✅               | ❌                | 👍              | At least one |
+| every()        | ✅        | ❌         | ✅               | ❌                | 👍              | All match |
+  

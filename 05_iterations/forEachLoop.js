@@ -52,7 +52,8 @@ const satates = [
     "name": "Delhi"
   }
 ]
-
+//
+// for Each loop kabhi koi value return nahi kerta hai cahhe aap isko variable mai store kero ya nhai kero
 satates.forEach((item, index, arr) => {
   console.log(`The short Name of ${item.code}, and the full name is ${item.name}`)
 })
