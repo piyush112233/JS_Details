@@ -98,6 +98,23 @@ let result = array.find((val) => val > 3);
 let hasValue = array.some(val => val > 5);
 let allGood = array.every(val => val < 10);
 
+| Point                                             | Detail                           |
+| ------------------------------------------------- | -------------------------------- |
+| 🎯 Mutable है                                     | Original array को modify करता है |
+| 💥 Default `sort()` strings को ही compare करता है |                                  |
+| ✅ Custom sort के लिए `compareFunction` ज़रूरी है  |                                  |
+| 🧹 Stable sort है (ES2019 से)                     |                                  |
+
+
+
+| Task                      | Code                                |
+| ------------------------- | ----------------------------------- |
+| Ascending sort (numbers)  | `arr.sort((a, b) => a - b)`         |
+| Descending sort (numbers) | `arr.sort((a, b) => b - a)`         |
+| String alphabetical       | `arr.sort()`                        |
+| Object sort by age        | `arr.sort((a, b) => a.age - b.age)` |
+
+
 🧠 Quick Summary Table:
 
 | Method/Loop    | Array पर | Object पर | Return करता है? | नया डेटा देता है? | Syntax Simple? | Remarks |
