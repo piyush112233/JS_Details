@@ -1,0 +1,116 @@
+📘 Questions:
+What are the different data types in JavaScript?
+
+What is the difference between null and undefined?
+
+How are arrays implemented in JavaScript?
+
+What is the difference between Array and Object in JS?
+
+What are Sets and Maps in JavaScript?
+
+Difference between Map and Object?
+
+📘 Example:
+ 
+const map = new Map();
+map.set("name", "Piyush");
+console.log(map.get("name")); // Piyush
+
+🔹 Array / String Based Coding Questions
+
+✅ Easy to Medium:
+
+Reverse a string
+
+Reverse an array in-place
+
+Check if a string is a palindrome
+
+Remove duplicates from an array
+
+Find the maximum sum of subarray (Kadane’s Algorithm)
+
+Rotate an array by k positions
+
+Two Sum problem (using Map)
+
+✅ Example:
+ 
+// Two Sum
+function twoSum(arr, target) {
+  const map = new Map();
+  for (let i = 0; i < arr.length; i++) {
+    let diff = target - arr[i];
+    if (map.has(diff)) {
+      return [map.get(diff), i];
+    }
+    map.set(arr[i], i);
+  }
+}
+
+🔹 Object & Recursion Based Questions
+
+Deep clone an object
+
+Flatten a nested object or array
+
+Count frequency of elements in an array
+
+Recursively calculate factorial / Fibonacci
+
+Implement debounce and throttle functions (imp for frontend)
+
+🔹 Stack / Queue / Linked List
+
+Implement a stack using arrays
+
+Check for balanced parentheses using stack
+
+Implement queue using class
+
+Reverse a linked list (basic logic, even if not full implementation)
+
+🔹 Tree / Graph (Advanced)
+
+Not always in frontend roles but important for SDE/Fullstack.
+
+Binary Tree Inorder / Preorder / Postorder traversal
+
+BFS and DFS in JavaScript
+
+Detect a cycle in a graph
+
+Find height of binary tree
+
+🔹 Algorithms (Most Common)
+
+Sorting algorithms: Bubble, Merge, Quick
+
+Binary Search (recursive and iterative)
+
+Sliding Window Technique (max sum, min length subarray etc.)
+
+Two Pointers (e.g., remove duplicates, sort colors)
+
+Dynamic Programming (fib, knapsack, climbing stairs etc.)
+
+💡 Bonus: JavaScript-specific DSA 
+
+Event loop + Call Stack + Microtasks Queue
+
+Memory management (heap, stack)
+
+Time complexity analysis in JS
+
+Higher-order functions in recursion
+
+✅ Tips for Interview:
+
+Practice on LeetCode, CodeStudio, or JavaScript30.
+
+Use console.log wisely to debug in browser.
+
+Understand time/space complexity for each solution.
+
+Try writing your own utility functions (e.g., deepClone, isEqual etc.)

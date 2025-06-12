@@ -125,4 +125,56 @@ const payAmount = shoppingCart.reduce((accU, item) => {
   return accU + item
 }, initialValue)
 
-console.log(payAmount);
+// console.log(payAmount);
+
+
+/** Filter method mai this ka use bhi ho sakta hai */
+let newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let newObje = { min: 5 }
+
+let result = newArr.filter(function (element, index, arr) {
+  return element > this.min
+}, newObje)
+
+// console.log(result)
+
+let returnval = newArr.every((val) => val > 0)
+
+// console.log(returnval)
+
+const fruits = ["apple", "banana", "apple", "orange", "banana"];
+
+// let fruitsData = fruits.reduce((prev, next, index, arr) => {
+//   if (fruits[index] == fruits[index + 1]) {
+//     prev = next
+//   }
+// }, {})
+
+
+const count = fruits.reduce((acc, fruit) => {
+  // console.log(acc);
+  // debugger;
+  console.log(acc[fruit])
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
+}, {});
+
+// console.log(count)
+
+let Numarr = [1, 2, 2, 3, 4, 4, 4, 5];
+
+let numberCountRes = Numarr.reduce((prev, next) => {
+  prev[next] = (prev[next] || 0) + 1
+  return prev;
+}, {})
+
+// console.log(numberCountRes)
+
+
+let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]  //  output = [[1,2],[3,4],[5,6],[7,8],[9]]  
+let output = [];
+for (let index = 0; index < input.length; index += 2) {
+  output.push(input.slice(index, index + 2))
+}
+
+console.log(output)

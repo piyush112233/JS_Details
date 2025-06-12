@@ -59,7 +59,7 @@ for (let key in object) {
 📌 इस्तेमाल: सिर्फ Arrays पर
 📌 Return: ❌ कुछ return नहीं करता
 📌 Structure:
-array.forEach((value, index) => {
+array.forEach((value, index, array) => {
   // value/index पर काम
 });
 

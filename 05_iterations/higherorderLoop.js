@@ -169,3 +169,29 @@ mapOne.set('RJ', "Rajasthan")
 for (const key in mapOne) {
   // console.log(key)
 }
+
+let bucket1 = [9, 9, 9, 9, 9, 9, 9];
+let bucket2 = [9, 9, 9, 9];
+
+let sumArray = [];
+let tenceNumber = null;
+// let onceNumber;
+
+for (let index = 0; index < bucket1.length; index++) {
+  let sum = null
+  for (let jindex = index; jindex < bucket2.length; jindex++) {
+    sum = bucket2[jindex] + bucket1[index];
+    console.log(`inner array value is ${bucket2[jindex]} and outer array value is ${bucket1[index]}`)
+    if (sum > 9) {
+      tenceNumber = Math.floor((sum % 100) / 10);
+      sumArray.push(sum % 10)
+    } else {
+      tenceNumber = null;
+
+    }
+    break
+  }
+  sumArray.push(tenceNumber + sum);
+}
+console.log(sumArray)
+

@@ -1,0 +1,82 @@
+✅ Basic SQL Interview Questions
+
+SQL kya hota hai? (What is SQL?)
+
+SQL ke different types of commands kya hote hain? (DML, DDL, DCL, TCL, etc.)
+
+SELECT, INSERT, UPDATE, DELETE ka use kaise hota hai?
+
+WHERE, AND, OR, NOT, IN, BETWEEN, LIKE — difference aur use.
+
+ORDER BY vs GROUP BY ka antar kya hota hai?
+
+DISTINCT keyword ka use kya hota hai?
+
+NULL vs 0 vs '' (empty string) — inme kya farak hai?
+
+✅ Intermediate Questions (Jo mostly pooche jaate hain)
+
+🔄 Joins and Relationships
+INNER JOIN vs LEFT JOIN vs RIGHT JOIN vs FULL JOIN
+
+Self Join kya hota hai?
+
+Cartesian Product kya hota hai?
+
+Foreign Key vs Primary Key?
+
+🧮 Aggregate Functions & Grouping
+COUNT(), SUM(), AVG(), MAX(), MIN() functions
+
+HAVING clause ka use kab hota hai?
+
+GROUP BY ke sath HAVING ka example
+
+🧩 Subqueries & Aliases
+Subquery kya hoti hai? Types of subqueries (Single row, Multiple row)
+
+IN, EXISTS, ANY, ALL ka difference
+
+Table alias (AS) aur column alias kaise use karte hain?
+
+✅ Advanced SQL Topics (Companies like TCS, Infosys, Product Startups mein pooche jaate hain)
+🧠 Analytical & Window Functions
+Difference between ROW_NUMBER(), RANK(), and DENSE_RANK()
+
+PARTITION BY and OVER() clause kya hota hai?
+
+Use of LEAD() and LAG()
+
+🔒 Security and Constraints
+NOT NULL, UNIQUE, DEFAULT, CHECK, PRIMARY KEY, FOREIGN KEY constraints
+
+Views kya hoti hain? View vs Table?
+
+Index kya hota hai aur performance kyu improve karta hai?
+
+📦 Stored Procedures, Triggers, Transactions
+Stored Procedure vs Function
+
+Trigger kya hota hai aur kab use hota hai?
+
+What is a Transaction? (ACID properties)
+
+✅ Practical/Problem-Based Questions
+2nd highest salary kaise nikaaloge?
+
+Department-wise highest salary employee kaise nikaaloge?
+
+Duplicate records kaise find karoge aur delete karoge?
+
+Table se 5th row ka data kaise nikaaloge? (LIMIT / OFFSET)
+
+✅ Bonus Logical Practice Questions
+Find employees whose name starts with 'A'
+
+Get all employees whose 3rd letter in name is 'n'
+
+How do you get top 3 records from a table?
+
+Find all customers who made more than 3 orders.
+
+Write a query to transpose rows into columns.

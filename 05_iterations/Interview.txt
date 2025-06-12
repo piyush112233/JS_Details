@@ -1,0 +1,141 @@
+**Node.js Mock Interview Questions and Answers**
+
+---
+
+### 1. What is the difference between `require` and `import` in Node.js? Can you use both together?
+
+**Answer:**
+
+* `require()` is part of the CommonJS module system, which is the default in Node.js.
+* `import` is part of the ES Modules (ESM), introduced with ES6.
+
+| Feature           | `require()` | `import`                                           |
+| ----------------- | ----------- | -------------------------------------------------- |
+| Module System     | CommonJS    | ES Modules (ESM)                                   |
+| Synchronous       | Yes         | No                                                 |
+| Conditional Usage | Yes         | No                                                 |
+| Node.js Default   | Yes         | No (requires `"type": "module"` in `package.json`) |
+
+**Can you use both?** Not directly in the same file unless using workarounds.
+
+---
+
+### 2. What is the difference between `setTimeout`, `Promise`, and `async/await`? Provide a use case.
+
+**Answer:**
+
+* \`\`: Delays execution of a function.
+* \`\`: Represents a future value (resolved or rejected).
+* \`\`: Syntactic sugar over Promises, allows writing asynchronous code in synchronous style.
+
+**Use Case Example:**
+
+```js
+async function fetchData() {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+  console.log(data);
+}
+```
+
+Use `async/await` when handling multiple asynchronous operations in sequence.
+
+---
+
+### 3. What is middleware in Express.js? What is `app.use()`?
+
+**Answer:**
+
+* Middleware are functions that have access to `req`, `res`, and `next()`.
+* They can modify the request/response or end the request-response cycle.
+* `app.use()` registers middleware globally.
+
+**Example:**
+
+```js
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+```
+
+**Use cases:** Authentication, logging, body parsing, error handling.
+
+---
+
+### 4. How do you design a user schema in MySQL?
+
+**Answer:**
+
+```sql
+CREATE TABLE Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+**Application-side validation with Sequelize:**
+
+```js
+const User = sequelize.define('User', {
+  name: { type: DataTypes.STRING, allowNull: false },
+  email: { type: DataTypes.STRING, unique: true, validate: { isEmail: true } },
+  password: { type: DataTypes.STRING, allowNull: false }
+});
+```
+
+---
+
+### 5. What is JWT and how does its authentication flow work?
+
+**Answer:**
+
+* JWT (JSON Web Token) is a compact token used for secure authentication.
+* Structure: `header.payload.signature`
+* Used for sessionless auth (login, role-based access, payments).
+
+**Login Flow:**
+
+1. User logs in -> server validates credentials.
+2. Server generates token:
+
+```js
+const token = jwt.sign({ userId: user.id }, 'secret', { expiresIn: '1h' });
+```
+
+3. Client stores token and sends it in headers.
+4. Server verifies token:
+
+```js
+jwt.verify(token, 'secret', (err, decoded) => { ... });
+```
+
+---
+
+### 6. A route in your Express app is returning 500 Internal Server Error. How would you debug?
+
+**Answer:**
+
+1. Check if the app/server is down or overloaded.
+2. Inspect logs/stack trace.
+3. Verify DB connection (credentials, host, port).
+4. Check query syntax and ensure required values are passed.
+5. Check for datatype mismatches.
+6. Run the query directly in DB to verify output.
+7. Wrap code in try/catch and return proper error responses.
+
+**Example:**
+
+```js
+try {
+  const user = await User.findByPk(req.params.id);
+  if (!user) return res.status(404).send("User not found");
+  res.send(user);
+} catch (err) {
+  console.error(err);
+  res.status(500).send("Server error");
+}
+```
